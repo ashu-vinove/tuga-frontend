@@ -1,0 +1,18 @@
+{{cb}}
+
+<div class="login">  
+  <h1>Registration</h1>
+  <!--<button (click)='fbSignup()'>Facebook</button>-->
+  <input type="image" src="http://www.thewiprochennaimarathon.com/images/signup_fb.png" alt="FB" (click)='fbSignup()'>
+  <hr>
+  <form (ngSubmit)='ragisterUsr()' name='rags'>
+    <input type="text" [(ngModel)]='newUsr.fname' name="fn" placeholder="First Name" required="required" />
+    <input type="text" [(ngModel)]='newUsr.lname' name="ln" placeholder="Last Name"  />
+    <input type="email" [(ngModel)]='newUsr.email' name="ei" placeholder="Email-Id" required="required" />
+    <input type="text" [(ngModel)]='newUsr.country' name="cn" placeholder="Country" required="required" />
+    <input type="password" [(ngModel)]='newUsr.password' name="cn" placeholder="New Password" required="required" />
+    <button type="submit" class="btn btn-primary btn-block btn-large">Sign Up !</button>
+    Already have account ?<a routerLink="/Login" >Log in</a>
+  </form>
+ 
+</div>

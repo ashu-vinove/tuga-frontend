@@ -1,0 +1,13 @@
+<p class='flash'>{{cb}}</p>
+<div class="login">
+  <h1>Login</h1>
+  <!--<button (click)='fbLogin()'>Facebook</button>-->
+  <input type="image" src="http://i.stack.imgur.com/ZW4QC.png" alt="FB" (click)='fbLogin()'>  
+  <hr>
+  <form (ngSubmit)='loginUsr()' name='loginfrm'>
+    <input type="text" [(ngModel)]='user.username' name="u" placeholder="Username/email" required="required" />
+    <input type="password" [(ngModel)]='user.password' name="p" placeholder="Password" required="required" />
+    <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    Dont have account ? <a routerLink="/Signup" >Ragister here</a>
+  </form>
+</div>

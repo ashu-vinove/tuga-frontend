@@ -1,0 +1,11 @@
+<ul>
+  <li><a class="active" href="javascript:void(0)">Hi , {{usr.firstname}} {{usr.lastname}}</a></li>
+  
+  <li style="float:right"><a (click)='logout()' class="active" href="javascript:void(0)">Logout</a></li>
+</ul>
+<div *ngIf='usr.profilePic'>
+  <img [src]='usr.profilePic' alt='profile photo' />
+</div>
+<p>Email-Id : {{usr.email}}</p>
+<p>Country : {{usr.country}}</p>
+       
