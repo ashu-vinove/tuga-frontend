@@ -55,6 +55,6 @@ export class AuthService {
             authHeader.append('Authorization','Bearer '+token);
         }       
         // return this._http.post('http://localhost:3000/fbLogin',{fb:fbData},{headers:authHeader});
-        return this._http.post('http://localhost:3000/fbLogin',{fb:fbData},{headers:authHeader});
+        return this._http.post('http://localhost:3000/fbLoginAuth',{fb:fbData},{headers:authHeader});
     }
 }

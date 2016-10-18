@@ -83,7 +83,7 @@ export class LoginComponent implements OnInit ,AfterContentInit {
     this._auth.facebookLogin()
      .map(res => res.json())
      .subscribe(
-        data => console.log(data),
+        data => this.loginsuccess(data),
         err => console.log(err),
         () => this.done()
       )
