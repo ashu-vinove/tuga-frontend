@@ -1,12 +1,17 @@
 
 #prerequisites
+
 angular-cli 
+
 node
+
 npm
 
 # version required
 angular-cli: 1.0.0-beta.16 
+
 node -v v4.2.6
+
 npm -v 3.10.8
 
 #tested on latest version of 
