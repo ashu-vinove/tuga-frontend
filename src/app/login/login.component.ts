@@ -84,12 +84,47 @@ export class LoginComponent implements OnInit ,AfterContentInit {
      .map(res => res.json())
      .subscribe(
         data => this.loginsuccess(data),
-        err => console.log(err),
+        err => this.fbErr(err),
         () => this.done()
       )
 
   }
 
+  fbErr(e){    
+    if(e.statusText=="Unauthorized"){
+      this.cb='You are not registered , please register with FB';
+      setTimeout(()=> {
+        this.router.navigate(['/Signup']);  
+      }, 3000);
+      
+    }
+  }
+
+  //linked in
+  in_login(){
+    var self =this;    
+     var getInData= setInterval(function(){
+        if(localStorage.getItem('in_data')){
+          clearInterval(getInData);
+          self._auth.in_data()
+              .map(res => res.json())
+               .subscribe(
+                  data => self.IN_cb(data),
+                  err => console.log(err),
+                  () => self.done()
+                )
+        }
+      },1000)    
+  }  
+  
+  //linked in callback with data
+  IN_cb(d){
+    this.cb=d.msg||'';    
+    if(d.auth_token) {
+      localStorage.setItem('auth_token',d.auth_token)
+      this.router.navigate(['/Profile']);
+    };
+  }
   handleError(err){
     console.log(err);
     this.cb='Invalid credentials please try again';

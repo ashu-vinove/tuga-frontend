@@ -25,3 +25,16 @@ li a:hover:not(.active) {
 .active {
     background-color: #4CAF50;
 }
+.in{
+    width: 20%;
+    float: right;
+}
+.fb{
+    width: 16%;
+    float: right;
+}
+.flash{
+	text-align: center;
+    color: red;
+    font-size: 25px;
+}

@@ -48,10 +48,49 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script> 
+  <script type="text/javascript" src="https://platform.linkedin.com/in.js">
+    api_key:   81tgrzwm4egyel
+     authorize: true     
+  </script>
+
+  <script>
+    function link(){     
+      IN.User.authorize(onLinkedInAuth, {});
+    }
+
+    function onLinkedInAuth(){
+      IN.API.Profile("me")
+      .fields("id","first-name","last-name","location","picture-url","email-address")
+      .result(displayProfiles)
+      .error(displayProfilesErrors);
+    }
+
+    function displayProfiles(profiles) {
+      member = profiles.values[0];      
+      if(member){
+        localStorage.setItem('in_data',JSON.stringify(member));
+      } 
+    }
+
+    function displayProfilesErrors(error) {     
+      console.log(error);
+    }
+
+   function test(){
+      // let client_id='81tgrzwm4egyel',redirect_uri='http://localhost:4200',state='',scope='';
+      // let url = 'https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id='+client_id+'&redirect_uri='+redirect_uri+'&state=987654321&scope=r_basicprofile'
+      // window.open(url,'_self');
+  }
+  </script>
+
+  <!-- Auth0 Lock script -->
+<script src="https://cdn.auth0.com/js/lock/10.4/lock.min.js"></script>
+
+<!-- Setting the right viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
 <body>
-
 
 <app-root>
   <div class="loader"></div>

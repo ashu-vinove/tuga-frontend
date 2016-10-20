@@ -1,8 +1,10 @@
 <p class='flash'>{{cb}}</p>
 <div class="login">
   <h1>Login</h1>
-  <!--<button (click)='fbLogin()'>Facebook</button>-->
-  <input type="image" src="http://i.stack.imgur.com/ZW4QC.png" alt="FB" (click)='fbLogin()'>  
+  <input type="image" src="http://i.stack.imgur.com/ZW4QC.png" alt="FB" (click)='fbLogin()'>
+  <input type="image" src="http://www.sctcc.edu/sites/default/files/department/CTEC/linkedin_button.png" alt="linkedIn" onclick="link()" (click)='in_login()'>
+  
+  <!--<button (click)='in_login()'>Linked-In</button>  -->
   <hr>
   <form (ngSubmit)='loginUsr()' name='loginfrm'>
     <input type="text" [(ngModel)]='user.username' name="u" placeholder="Username/email" required="required" />

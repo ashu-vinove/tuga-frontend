@@ -3,9 +3,26 @@
   
   <li style="float:right"><a (click)='logout()' class="active" href="javascript:void(0)">Logout</a></li>
 </ul>
+<p class='flash'>{{cb}}</p>
 <div *ngIf='usr.profilePic'>
   <img [src]='usr.profilePic' alt='profile photo' />
 </div>
+
+<div *ngIf='usr.INdp'>
+  <img [src]='usr.INdp' alt='profile photo' />
+</div>
+
+<div *ngIf='!usr.facebookID'>
+  <input type="image" src="http://www.e4apps.com/images/connect-with-facebook.png" alt="FB" (click)='intWidFB()' class='fb'/>
+</div>
+
+<div *ngIf='!usr.INid'>
+   <input type="image" class='in' src="http://www.sctcc.edu/sites/default/files/department/CTEC/linkedin_button.png" alt="linkedIn" 
+   onclick="link()"
+   (click)="intWidIN()"
+   />
+</div>
+
 <p>Email-Id : {{usr.email}}</p>
 <p>Country : {{usr.country}}</p>
        
